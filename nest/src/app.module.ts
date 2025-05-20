@@ -3,6 +3,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { PostModule } from './post/post.module';
+import { APP_FILTER } from '@nestjs/core';
+import { HttpFilter } from './http-filter';
 
 @Module({
   imports: [
@@ -19,6 +21,12 @@ import { PostModule } from './post/post.module';
     PostModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    AppService,
+    {
+      provide: APP_FILTER,
+      useClass: HttpFilter,
+    },
+  ],
 })
 export class AppModule {}
