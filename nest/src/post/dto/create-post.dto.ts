@@ -14,4 +14,10 @@ export class CreatePostDto {
     example: 'This is the content of my first post.',
   })
   content: string;
+  @IsString()
+  @ApiProperty({
+    description: 'The author of the post',
+    example: 'John Doe',
+  })
+  author: string;
 }

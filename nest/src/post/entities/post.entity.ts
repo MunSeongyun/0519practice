@@ -8,4 +8,6 @@ export class Post {
   title: string;
   @Column()
   content: string;
+  @Column()
+  author: string;
 }

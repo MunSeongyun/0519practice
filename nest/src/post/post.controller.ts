@@ -40,11 +40,13 @@ export class PostController {
         id: 1,
         title: '나의 첫 번째 게시글',
         content: '이것은 첫 번째 게시글의 내용입니다.',
+        author: '홍길동',
       },
       {
         id: 2,
         title: '나의 두 번째 게시글',
         content: '이것은 두 번째 게시글의 내용입니다.',
+        author: '김철수',
       },
     ],
   })
@@ -64,6 +66,7 @@ export class PostController {
       id: 1,
       title: '나의 첫 번째 게시글',
       content: '이것은 첫 번째 게시글의 내용입니다.',
+      author: '홍길동',
     },
   })
   @Get(':id')
